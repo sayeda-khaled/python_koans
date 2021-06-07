@@ -5,6 +5,10 @@ from runner.koan import *
 
 class AboutStrings(Koan):
 
+    # def test_double_quoted_strings_are_strings(self):
+    #     string = "Hello, world."
+    #     self.assertEqual(__, isinstance(string, str))
+
     def test_double_quoted_strings_are_strings(self):
         string = "Hello, world."
         self.assertEqual(__, isinstance(string, str))
