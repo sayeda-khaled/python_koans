@@ -4,12 +4,35 @@
 from runner.koan import *
 
 class AboutTuples(Koan):
+    # def test_creating_a_tuple(self):
+    #     count_of_three =  (1, 2, 5)
+    #     self.assertEqual(__, count_of_three[2])
+
+    # https://www.w3schools.com/python/python_tuples.asp
+    # A tuple is a collection which is ordered and unchangeable. Tuples are written with round brackets.
+
+
     def test_creating_a_tuple(self):
         count_of_three =  (1, 2, 5)
-        self.assertEqual(__, count_of_three[2])
+        self.assertEqual(5, count_of_three[2])
 
+
+    # def test_tuples_are_immutable_so_item_assignment_is_not_possible(self):
+    #
+    #     count_of_three = (1, 2, 5)
+    #     try:
+    #         count_of_three[2] = "three"
+    #     except TypeError as ex:
+    #         msg = ex.args[0]
+    #
+    #     # Note, assertRegex() uses regular expression pattern matching,
+    #     # so you don't have to copy the whole message.
+    #
+    #     self.assertRegex(msg, __)
+
+    # https://www.w3schools.com/python/python_tuples.asp
+    # A tuple is a collection which is ordered and unchangeable.
     def test_tuples_are_immutable_so_item_assignment_is_not_possible(self):
-
         count_of_three = (1, 2, 5)
         try:
             count_of_three[2] = "three"
@@ -19,7 +42,11 @@ class AboutTuples(Koan):
         # Note, assertRegex() uses regular expression pattern matching,
         # so you don't have to copy the whole message.
 
-        self.assertRegex(msg, __)
+        self.assertRegex(msg,"'tuple' object does not support item assignment")
+
+    # def test_tuples_are_immutable_so_appending_is_not_possible(self):
+    #     count_of_three =  (1, 2, 5)
+    #     with self.assertRaises(___): count_of_three.append("boom")
 
     def test_tuples_are_immutable_so_appending_is_not_possible(self):
         count_of_three =  (1, 2, 5)
