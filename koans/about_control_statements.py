@@ -5,18 +5,42 @@ from runner.koan import *
 
 class AboutControlStatements(Koan):
 
+    # def test_if_then_else_statements(self):
+    #     if True:
+    #         result = 'true value'
+    #     else:
+    #         result = 'false value'
+    #     self.assertEqual(__, result)
+
     def test_if_then_else_statements(self):
         if True:
             result = 'true value'
         else:
             result = 'false value'
-        self.assertEqual(__, result)
+        self.assertEqual('true value', result)
+
+
+    # def test_if_then_statements(self):
+    #     result = 'default value'
+    #     if True:
+    #         result = 'true value'
+    #     self.assertEqual(__, result)
+
 
     def test_if_then_statements(self):
         result = 'default value'
         if True:
             result = 'true value'
-        self.assertEqual(__, result)
+        self.assertEqual('true value', result)
+
+    # def test_if_then_elif_else_statements(self):
+    #     if False:
+    #         result = 'first value'
+    #     elif True:
+    #         result = 'true value'
+    #     else:
+    #         result = 'default value'
+    #     self.assertEqual(__, result)
 
     def test_if_then_elif_else_statements(self):
         if False:
@@ -25,7 +49,20 @@ class AboutControlStatements(Koan):
             result = 'true value'
         else:
             result = 'default value'
-        self.assertEqual(__, result)
+        self.assertEqual( 'true value', result)
+
+    # def test_while_statement(self):
+    #     i = 1
+    #     result = 1
+    #     while i <= 10:
+    #         result = result * i
+    #         i += 1
+    #     self.assertEqual(__, result)
+
+    # While statement, whill continue to loop and multiply i * result for 10 times, and stops when i reaches 10
+    # https://realpython.com/python-while-loop/
+    # while <expr>:
+    # <statement(s)>
 
     def test_while_statement(self):
         i = 1
@@ -33,8 +70,19 @@ class AboutControlStatements(Koan):
         while i <= 10:
             result = result * i
             i += 1
-        self.assertEqual(__, result)
+        self.assertEqual(3628800, result)
 
+    # def test_break_statement(self):
+    #     i = 1
+    #     result = 1
+    #     while True:
+    #         if i > 10: break
+    #         result = result * i
+    #         i += 1
+    #     self.assertEqual(__, result)
+
+    # https://realpython.com/python-while-loop/
+    # The Python break statement immediately terminates a loop entirely.
     def test_break_statement(self):
         i = 1
         result = 1
@@ -42,7 +90,16 @@ class AboutControlStatements(Koan):
             if i > 10: break
             result = result * i
             i += 1
-        self.assertEqual(__, result)
+        self.assertEqual(3628800, result)
+
+    # def test_continue_statement(self):
+    #     i = 0
+    #     result = []
+    #     while i < 10:
+    #         i += 1
+    #         if (i % 2) == 0: continue
+    #         result.append(i)
+    #     self.assertEqual(__, result)
 
     def test_continue_statement(self):
         i = 0
