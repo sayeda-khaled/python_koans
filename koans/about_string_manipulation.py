@@ -120,7 +120,9 @@ class AboutStringManipulation(Koan):
     #     self.assertListEqual([__, __, __, __], words)
     #
     #     # Pattern is a Python regular expression pattern which matches ',' or ';'
-
+    # https://docs.python.org/2/library/re.html#re.compile
+    # Compile a regular expression pattern into a regular expression object
+    # prog = re.compile(pattern)
     def test_strings_can_be_split_with_different_patterns(self):
         import re #import python regular expression library
 
@@ -132,22 +134,56 @@ class AboutStringManipulation(Koan):
         self.assertListEqual(['the', 'rain', 'in', 'spain'], words)
 
         # Pattern is a Python regular expression pattern which matches ',' or ';'
+    # https://www.journaldev.com/23598/python-raw-string#:~:text=Python%20raw%20string%20is%20created,treated%20as%20an%20escape%20character.
+    # Python raw string is created by prefixing a string literal with ‘r’ or ‘R’. Python raw string treats backslash (\)
+    # as a literal character. This is useful when we want to have a string that contains backslash and don’t want
+    # it to be treated as an escape character.
+    # Useful in regular expressions, file paths, URLs, etc.
 
     def test_raw_strings_do_not_interpret_escape_characters(self):
         string = r'\n'
         self.assertNotEqual('\n', string)
-        self.assertEqual(__, string)
-        self.assertEqual(__, len(string))
+        self.assertEqual('\\n', string)
+        self.assertEqual(2, len(string))
 
-        # Useful in regular expressions, file paths, URLs, etc.
+
+    # def test_strings_can_be_joined(self):
+    #     words = ["Now", "is", "the", "time"]
+    #     self.assertEqual(__, ' '.join(words))
+
+    # https://www.geeksforgeeks.org/join-function-python/
+    # The join() method is a string method and returns a string in which the elements of sequence
+    # have been joined by str separator.
+    # Syntax:
+    # string_name.join(iterable)
+
 
     def test_strings_can_be_joined(self):
         words = ["Now", "is", "the", "time"]
-        self.assertEqual(__, ' '.join(words))
+        self.assertEqual("Now is the time", ' '.join(words))
+    #
+    # def test_strings_can_change_case(self):
+    #     self.assertEqual(__, 'guido'.capitalize())
+    #     self.assertEqual(__, 'guido'.upper())
+    #     self.assertEqual(__, 'TimBot'.lower())
+    #     self.assertEqual(__, 'guido van rossum'.title())
+    #     self.assertEqual(__, 'ToTaLlY aWeSoMe'.swapcase())
+
+    # https://www.w3schools.com/python/ref_string_lower.asp
+    # The lower() method returns a string where all characters are lower case. Symbols and Numbers are ignored.
+    # https://www.w3schools.com/python/ref_string_upper.asp
+    # The upper() method returns a string where all characters are in upper case. Symbols and Numbers are ignored.
+    # https://www.w3schools.com/python/ref_string_capitalize.asp
+    # The capitalize() method returns a string where the first character is upper case.
+    # https://www.w3schools.com/python/ref_string_title.asp
+    # The title() method returns a string where the first character in every word is upper case. Like a header, or a title.
+    # https://www.w3schools.com/python/ref_string_swapcase.asp
+    # The swapcase() method returns a string where all the upper case letters are lower case and vice versa.
+
 
     def test_strings_can_change_case(self):
-        self.assertEqual(__, 'guido'.capitalize())
-        self.assertEqual(__, 'guido'.upper())
-        self.assertEqual(__, 'TimBot'.lower())
-        self.assertEqual(__, 'guido van rossum'.title())
-        self.assertEqual(__, 'ToTaLlY aWeSoMe'.swapcase())
+        self.assertEqual('Guido', 'guido'.capitalize())
+        self.assertEqual('GUIDO', 'guido'.upper())
+        self.assertEqual('timbot', 'TimBot'.lower())
+        self.assertEqual('Guido Van Rossum', 'guido van rossum'.title())
+        self.assertEqual('tOtAlLy AwEsOmE', 'ToTaLlY aWeSoMe'.swapcase())
