@@ -7,6 +7,8 @@ from runner.koan import *
 from .triangle import *
 
 class AboutTriangleProject(Koan):
+
+
     def test_equilateral_triangles_have_equal_sides(self):
         self.assertEqual('equilateral', triangle(2, 2, 2))
         self.assertEqual('equilateral', triangle(10, 10, 10))
