@@ -293,6 +293,8 @@ class AboutIteration(Koan):
     #     result = map(self.add_ten, range(1,4))
     #     self.assertEqual(__, list(result))
     # https://realpython.com/python-map-function/
+    # https://docs.python.org/3/tutorial/controlflow.html
+    # If you do need to iterate over a sequence of numbers, the built-in function range() comes in handy.
 
     def test_all_iteration_methods_work_on_any_sequence_not_just_lists(self):
         # Ranges are an iterable sequence
